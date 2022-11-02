@@ -14,6 +14,7 @@ const ClearButton = () => {
           color: '#009A40',
           scale: 1.2,
         }}
+        whileTap={{ color: '#009A40', scale: 1.2 }}
       >
         clear completed
       </motion.button>

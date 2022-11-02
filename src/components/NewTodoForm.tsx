@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NewTodoForm = () => {
@@ -13,9 +14,14 @@ const NewTodoForm = () => {
         onChange={e => setText(e.target.value)}
         className="w-full h-full outline-none resize-none"
       />
-      <button className="w-full text-center bg-slate-200 px-4 py-2 rounded-xl outline-none hover:bg-[#009A40] hover:text-white focus:bg-[#009A40] focus:text-white transition-all shadow-md active:shadow-none">
+      <motion.button
+        className="w-full text-center px-4 py-2 rounded-xl outline-none shadow-md active:shadow-none"
+        initial={{ color: '#000000', backgroundColor: 'rgb(226 232 240)' }}
+        whileHover={{ color: '#ffffff', backgroundColor: '#009A40' }}
+        whileTap={{ color: '#ffffff', backgroundColor: '#009A40' }}
+      >
         Add
-      </button>
+      </motion.button>
     </form>
   );
 };
