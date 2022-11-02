@@ -8,7 +8,7 @@ const Menu: React.FC = () => {
   const { activeIndex, handleActiveIndex, filter } = useStateContext();
 
   return (
-    <ul className="flex items-center justify-evenly bg-slate-50 rounded py-2 shadow-xl">
+    <ul className="flex items-center justify-evenly bg-slate-50 rounded py-2 shadow-xl ">
       {menuTabs.map((tab, index) => (
         <MenuItem
           key={index}
@@ -52,19 +52,19 @@ export const ActiveLine = () => {
     <>
       <motion.div
         layoutId="activeItem"
-        className="w-[calc(100%/2)] h-[2px] absolute -top-1 -left-2 bg-sky-500 "
+        className="w-[calc(100%/2)] h-[2px] absolute -bottom-1 -left-2 bg-[#009A40] rounded"
       />
       <motion.div
         layoutId="activeItem1"
-        className="h-[calc(100%/2)] w-[2px] absolute -top-1 -left-2 bg-sky-500 "
+        className="h-[calc(100%/2)] w-[2px] absolute -bottom-1 -left-2 bg-[#009A40] rounded"
       />
       <motion.div
         layoutId="activeItem2"
-        className="w-[calc(100%/2)] h-[2px] absolute -bottom-1 -right-2 bg-sky-500 "
+        className="w-[calc(100%/2)] h-[2px] absolute -top-1 -right-2 bg-[#009A40] rounded"
       />
       <motion.div
         layoutId="activeItem3"
-        className="h-[calc(100%/2)] w-[2px] absolute -bottom-1 -right-2 bg-sky-500 "
+        className="h-[calc(100%/2)] w-[2px] absolute -top-1 -right-2 bg-[#009A40] rounded"
       />
     </>
   );

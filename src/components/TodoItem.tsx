@@ -33,7 +33,7 @@ const TodoItem = ({ id, title, completed }: ITodo) => {
             className="opacity-0 absolute top-0 bottom-0 left-0 right-0 cursor-pointer peer z-[5]"
             onChange={() => toggleComplete(id)}
           />
-          <span className="w-4 h-4 rounded absolute border border-sky-500 bg-transparent peer-checked:bg-sky-500 flex items-center justify-center text-white transition-all">
+          <span className="w-4 h-4 rounded absolute border border-[#009A40] bg-transparent peer-checked:bg-[#009A40] flex items-center justify-center text-white transition-all">
             {completed && <BsCheck />}
           </span>
           <span className="pl-8 peer-checked:text-gray-400 peer-checked:line-through">

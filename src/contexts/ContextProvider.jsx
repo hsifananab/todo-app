@@ -22,14 +22,18 @@ export const ContextProvider = ({ children }) => {
     },
   ]);
 
-  console.log(todos);
-
   const [modal, setModal] = useState(false);
   const [text, setText] = useState('');
-  const [filtered, setFiltered] = useState(todos);
+  const [filtered, setFiltered] = useState(todos); // !!!
+  const [numOfActive, setNumOfActive] = useState(
+    todos.reduce((acc, item) => (item.completed === false ? acc + 1 : acc), 0)
+  );
 
   useEffect(() => {
     setFiltered(todos);
+    setNumOfActive(
+      todos.reduce((acc, item) => (item.completed === false ? acc + 1 : acc), 0)
+    );
   }, [todos]);
 
   const handleActiveIndex = index => {
@@ -74,7 +78,11 @@ export const ContextProvider = ({ children }) => {
   };
 
   const removeTodo = id => {
-    setTodos(filtered.filter(todo => todo.id !== id));
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
+  const clearAll = () => {
+    setTodos(todos.filter(todo => todo.completed !== true));
   };
 
   return (
@@ -93,6 +101,8 @@ export const ContextProvider = ({ children }) => {
         filtered,
         setFiltered,
         filter,
+        numOfActive,
+        clearAll,
       }}
     >
       {children}
