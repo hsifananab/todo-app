@@ -37,9 +37,8 @@ interface MenuItemProps {
 const MenuItem: React.FC<MenuItemProps> = ({ tab, handleClick, isActive }) => {
   return (
     <motion.li
-      className="relative cursor-pointer transition-all"
+      className="relative cursor-pointer transition-all hover:text-[#009A40] focus:text-[#009A40] active:text-[#009A40] "
       onClick={handleClick}
-      // style={{ color: isActive ? 'rgb(14 165 233)' : '#000' }}
     >
       {isActive && <ActiveLine />}
       {tab}

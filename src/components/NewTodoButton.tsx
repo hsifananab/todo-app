@@ -10,6 +10,7 @@ const NewTodoButton = () => {
       onClick={() => setModal(true)}
       initial={{ rotate: '-90deg', scale: 1 }}
       whileHover={{ rotate: 0, scale: 1.1 }}
+      whileFocus={{ rotate: 0, scale: 1.1 }}
       whileTap={{ rotate: 0, scale: 1.1 }}
     >
       <IoMdAdd className="text-2xl text-white" />
